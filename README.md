@@ -43,14 +43,51 @@ A full subtractor is a combinational circuit that performs subtraction involving
 
 
 ## Program:
+HALF SUBTRACTOR
+~~~
+module exp4a(a,b,diff,borrow);
+input a,b;
+output diff,borrow;
+wire adash;
+xor(diff,a,b);
+not(adash,a);
+and(borrow,adash,b);
+endmodule 
+~~~
+
+FULL SUTRACTOR
+~~~
+module exp4b(a,b,c,diff,borrow);
+input a,b,c;
+output diff,borrow;
+wire adash,x,p,q,r;
+xor(x,b,c);
+xor(diff,a,x);
+not(adash,a);
+and(p,adash,c);
+and(q,b,c);
+and(r,adash,b);
+or(borrow,p,q,r);
+endmodule 
+~~~
+
 
 
 ## RTL Schematic:
+HALF SUBSTRACTOT
+![241353688-b693a036-8f91-4b01-b5f5-52f5b6e9f7ed](https://github.com/maaplasai7/Subtractor/assets/134155273/d82e26ed-3f1f-4114-ad00-0265bd9e583f)
 
+FULL SUBTRACTOR
+![241353769-fd8581a3-0516-4f97-b7f3-7c82f60b85da](https://github.com/maaplasai7/Subtractor/assets/134155273/a405d1d4-bbb4-4053-bc60-16af06d7d8ac)
 
 
 
 ## Timing Diagram:
+HALF SUBTRACTOR
+![241353855-8807ca76-a1f8-43c9-9b5e-43ea5305924f](https://github.com/maaplasai7/Subtractor/assets/134155273/43fad216-ab2e-405f-90cf-acaa2ca776bf)
+
+FULL SUBTRACTOR
+![241354039-0c6d18bd-1927-4af2-8b3e-9a0f1e3532f6](https://github.com/maaplasai7/Subtractor/assets/134155273/378b9135-0317-4d6b-8de3-50d2ff15708e)
 
 
 ## Result:
